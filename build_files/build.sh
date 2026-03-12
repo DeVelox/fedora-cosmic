@@ -15,6 +15,11 @@ dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/te
 dnf5 -y install atuin alacritty bat btop dysk eza fd-find fastfetch fish helix ncdu nix-core \
 podlet podman-compose quickemu ripgrep starship stow tokei trash-cli ugrep zellij zoxide
 
+# Switch to bootc for updates
+systemctl enable bootc-fetch-apply-updates.timer
+systemctl disable rpm-ostreed-automatic.timer
+sed -i 's/stage/none/' /etc/rpm-ostreed.conf
+
 # Cleanup
 dnf5 clean all
 rm -rf /tmp/* || true
