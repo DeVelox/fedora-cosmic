@@ -12,9 +12,8 @@ systemctl enable cosmic-greeter.service
 
 # Extra apps
 dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
-dnf5 -y install alacritty fish fastfetch podlet podman-compose quickemu starship zellij \
-atuin bat btop dysk eza fd-find helix ncdu nix-core ripgrep trash-cli stow tokei ugrep zoxide
-dnf5 -y config-manager setopt terra.enabled=false
+dnf5 -y install atuin alacritty bat btop dysk eza fd-find fastfetch fish helix ncdu nix-core \
+podlet podman-compose quickemu ripgrep starship stow tokei trash-cli ugrep zellij zoxide
 
 # Cleanup
 dnf5 clean all
