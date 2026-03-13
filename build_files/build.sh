@@ -12,8 +12,8 @@ systemctl enable cosmic-greeter.service
 
 # Extra apps
 dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
-dnf5 -y install atuin alacritty bat btop direnv dysk eza fd-find fish helix ncdu nix-core \
-podlet podman-compose quickemu ripgrep starship stow tokei trash-cli ugrep zellij zoxide
+dnf5 -y install atuin alacritty bat btop direnv eza fd-find fish helix ncdu \
+nix-core podlet podman-compose quickemu ripgrep starship ugrep zellij zoxide
 
 # Switch to bootc for updates
 systemctl disable rpm-ostreed-automatic.timer
